@@ -46,7 +46,7 @@ $mensajes = [
 ];
 ?>
 
-<link rel="stylesheet" href="avisos.css">
+<link rel="stylesheet" href="../../css/avisos.css">
 
 <div class="avisos-container">
 
