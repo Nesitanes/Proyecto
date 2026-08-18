@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header & Navbar */
+.main-navbar {
+    background-color: #ffffff;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.brand-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1a2530;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-link-item {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1a2530;
+    text-decoration: none;
+}
+
+.btn-nav-login {
+    background-color: #3b5998;
+    color: #ffffff;
+    padding: 8px 22px;
+    border-radius: 6px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero-banner {
+    background: linear-gradient(135deg, #5b9bd5 0%, #4a82b8 100%);
+    min-height: 380px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-image-wrapper {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+/* Transición limpia que funde el borde derecho/izquierdo sin cortar la foto */
+.hero-image-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -20px;
+    width: 60px;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(74, 130, 184, 0.8));
+    pointer-events: none;
+}
+
+.hero-doctors-img {
+    max-height: 360px;
+    width: auto;
+    display: block;
+    mix-blend-mode: multiply;
+    object-fit: contain;
+}
+
+.hero-content {
+    max-width: 550px;
+    align-self: center;
+}
+
+.hero-title-main {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #111111;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-hero-login {
+    background-color: #3b5998;
+    color: #ffffff;
+    padding: 10px 28px;
+    border-radius: 6px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.btn-hero-cita {
+    background-color: #00bcd4;
+    color: #ffffff;
+    padding: 10px 28px;
+    border-radius: 6px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* Tarjetas Informativas */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 30px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.info-card {
+    background-color: #e8e8e8;
+    border-radius: 12px;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.info-card i {
+    font-size: 4rem;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.info-card h4 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #000000;
+    margin: 0;
+}

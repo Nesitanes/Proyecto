@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d8f0f6;
+    /* Imagen médica alineada a la izquierda */
+    background-image: url('../img/doctores.png');
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: contain;
+}
+
+.login-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 40px 35px;
+    width: 100%;
+    max-width: 440px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.login-brand {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #000000;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-label-custom {
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: #111111;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.custom-input-group {
+    background-color: #d9d9d9;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    padding: 10px 14px;
+    margin-bottom: 22px;
+}
+
+.custom-input-group i {
+    font-size: 1.4rem;
+    color: #222222;
+}
+
+.custom-input-group input {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    margin-left: 10px;
+    font-size: 1rem;
+    color: #333333;
+}
+
+.btn-login-custom {
+    background-color: #365880;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.15rem;
+    border: none;
+    border-radius: 4px;
+    padding: 12px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.forgot-password-link {
+    display: block;
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: #000000;
+    text-decoration: none;
+    margin-bottom: 12px;
+}
+
+.register-link {
+    display: block;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: #0088ff;
+    text-decoration: none;
+}
