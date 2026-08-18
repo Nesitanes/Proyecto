@@ -39,7 +39,7 @@ $mensajes = [
     ],
     [
         "fecha" => "Sábado",
-        "remitente" => "Dr. Álvaro Díaz",
+        "remitente" => "Dr. Álvaro Díaz", 
         "mensaje" => "Reunión confirmada",
         "area" => "Medicina General"
     ]
