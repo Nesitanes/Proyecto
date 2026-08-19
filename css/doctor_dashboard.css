@@ -2,11 +2,13 @@
 .dashboard-wrapper,
 .dashboard-wrapper * {
     box-sizing: border-box !important;
-    margin: 0;
+    margin: 0 ;
     padding: 0;
 }
 
 body {
+    margin: 0 !important;
+    padding: 0 !important;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f8fafc;
     color: #1f2937;
@@ -22,7 +24,7 @@ body {
 .sidebar {
     width: 260px !important;
     min-width: 260px !important;
-    background-color: #1e293b; /* Tono obscuro azulado profesional */
+    background-color: #ffffff !important; /* Tono obscuro azulado profesional */
     color: #f8fafc;
     display: flex;
     flex-direction: column;
@@ -36,7 +38,7 @@ body {
 
 .sidebar-header {
     padding: 24px 20px;
-    border-bottom: 1px solid #334155;
+    border-bottom: 1px solid #fefefe;
 }
 
 .brand-logo {
@@ -175,6 +177,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    padding-top: 0 !important;
 }
 
 .topbar {
@@ -190,6 +193,74 @@ body {
     z-index: 90;
 }
 
+/*BARRA SUPERIOR */
+.topbar-navbar {
+    background-color: #1e293b; 
+    height: 65px;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Alinea los elementos hacia la derecha */
+    gap: 25px;
+    position: sticky;
+    top: 0;
+    margin-top: 0 !important;
+    z-index: 90;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Enlaces del menú superior */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    transition: opacity 0.2s ease;
+}
+
+.nav-links a:hover {
+    opacity: 0.8;
+}
+
+/* Sección de perfil (Línea separadora + Nombre + Avatar) */
+.user-profile-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-left: 20px;
+    border-left: 2px solid rgba(255, 255, 255, 0.6); /* Línea divisora blanca */
+    height: 35px;
+}
+
+.user-name {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Círculo para la foto/avatar */
+.user-avatar-circle {
+    width: 42px;
+    height: 42px;
+    background-color: #d1d5db; 
+    color: #374151;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+}
 .current-date {
     display: flex;
     align-items: center;

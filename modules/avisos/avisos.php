@@ -47,10 +47,7 @@ $mensajes = [
 ?>
 
 <link rel="stylesheet" href="../../css/avisos.css">
-
-<div class="avisos-container">
-
-
+<div class="panel-main-container">
 
     <div class="avisos-header">
 
@@ -299,6 +296,7 @@ $mensajes = [
         </section>
 
     </div>
+
 
 </div>
 

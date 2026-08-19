@@ -14,7 +14,7 @@ $modulo = isset($_GET['mod']) ? $_GET['mod'] : 'citas';
 // Módulos permitidos para el perfil de Paciente
 $modulos_permitidos = [
     'citas'  => '../modules/citas/citas_pacient.php',
-    'avisos' => '../modules/reportes/reportes.php'
+    'avisos' => '../modules/reportes/menu_reportes.php'
 ];
 
 // Determinar qué archivo cargar dinámicamente
@@ -35,8 +35,24 @@ $archivo_modulo = isset($modulos_permitidos[$modulo])
     <!-- Estilos Globals y Módulos -->
     <link rel="stylesheet" href="../css/doctor_dashboard.css">
     <link rel="stylesheet" href="../css/citas_pacient.css">
-    <link rel="stylesheet" href="../css/reportes.css">
+    <link rel="stylesheet" href="../css/reportes_menus.css">
 </head>
+<!-- Nueva Barra Superior Horizontal -->
+<header class="topbar-navbar">
+    <nav class="nav-links">
+        <a href="doctor.php?mod=panel">INICIO</a>
+        <a href="#">SERVICIOS</a>
+        <a href="#">NOSOTROS</a>
+        <a href="#">CONTACTO</a>
+    </nav>
+
+    <div class="user-profile-section">
+        <span class="user-name"><?= htmlspecialchars($usuario['nombre']) ?></span>
+        <div class="user-avatar-circle">
+            <?= htmlspecialchars($usuario['avatar']) ?>
+        </div>
+    </div>
+</header>
 <body>
 
     <div class="dashboard-wrapper">
@@ -50,14 +66,7 @@ $archivo_modulo = isset($modulos_permitidos[$modulo])
                 </div>
             </div>
 
-            <!-- Perfil del Paciente -->
-            <div class="sidebar-user-profile">
-                <div class="user-avatar" style="background-color: #059669;"><?= $usuario['avatar'] ?></div>
-                <div class="user-details">
-                    <strong><?= htmlspecialchars($usuario['nombre']) ?></strong>
-                    <small><?= htmlspecialchars($usuario['codigo']) ?></small>
-                </div>
-            </div>
+          
 
             <!-- Navegación de Módulos para Pacientes -->
             <nav class="sidebar-menu">
@@ -91,27 +100,7 @@ $archivo_modulo = isset($modulos_permitidos[$modulo])
         <!-- CONTENEDOR PRINCIPAL-->
         <main class="main-content">
             
-            <!-- Barra Superior (Top Header) -->
-            <header class="topbar">
-                <div class="topbar-left">
-                    <span class="current-date">
-                        <i class='bx bx-time-five'></i> <?= date('d/m/Y') ?>
-                    </span>
-                </div>
-
-                <div class="topbar-right">
-                    <button class="topbar-icon-btn" title="Notificaciones">
-                        <i class='bx bx-bell'></i>
-                        <span class="notification-dot"></span>
-                    </button>
-                    <div class="topbar-divider"></div>
-                    <div class="user-badge">
-                        <span class="role-tag" style="background: #d1fae5; color: #047857;">
-                            <?= htmlspecialchars($usuario['rol']) ?>
-                        </span>
-                    </div>
-                </div>
-            </header>
+            
 
             <!-- ÁREA DINÁMICA DE MÓDULOS -->
             <section class="module-viewport">

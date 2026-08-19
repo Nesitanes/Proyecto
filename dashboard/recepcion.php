@@ -14,7 +14,7 @@ $modulo = isset($_GET['mod']) ? $_GET['mod'] : 'panel';
 $modulos_permitidos = [
     'panel'     => '../modules/panel/panel_recepcion.php',
     'citas'     => '../modules/citas/citas_rep.php',
-    'pacientes' => '../modules/pacientes/pacientes.php',
+    'pacientes' => '../modules/pacientes/recepcion_pacientes.php',
     'avisos'    => '../modules/avisos/avisos.php',
     'reportes'  => '../modules/reportes/reportes.php'
 ];
@@ -39,10 +39,26 @@ $archivo_modulo = isset($modulos_permitidos[$modulo])
     <link rel="stylesheet" href="../css/doctor_dashboard.css">
     <link rel="stylesheet" href="../css/panel_recepcion.css">
     <link rel="stylesheet" href="../css/citas_rep.css">
-    <link rel="stylesheet" href="../css/pacientes.css">
+    <link rel="stylesheet" href="../css/reportes_menus.css">
     <link rel="stylesheet" href="../css/avisos.css">
     <link rel="stylesheet" href="../css/reportes.css">
 </head>
+<!-- Nueva Barra Superior Horizontal -->
+<header class="topbar-navbar">
+    <nav class="nav-links">
+        <a href="doctor.php?mod=panel">INICIO</a>
+        <a href="#">SERVICIOS</a>
+        <a href="#">NOSOTROS</a>
+        <a href="#">CONTACTO</a>
+    </nav>
+
+    <div class="user-profile-section">
+        <span class="user-name"><?= htmlspecialchars($usuario['nombre']) ?></span>
+        <div class="user-avatar-circle">
+            <?= htmlspecialchars($usuario['avatar']) ?>
+        </div>
+    </div>
+</header>
 <body>
 
     <div class="dashboard-wrapper">
@@ -56,14 +72,7 @@ $archivo_modulo = isset($modulos_permitidos[$modulo])
                 </div>
             </div>
 
-            <!-- Perfil del Administrador -->
-            <div class="sidebar-user-profile">
-                <div class="user-avatar" style="background-color: #7c3aed;"><?= $usuario['avatar'] ?></div>
-                <div class="user-details">
-                    <strong><?= htmlspecialchars($usuario['nombre']) ?></strong>
-                    <small><?= htmlspecialchars($usuario['rol']) ?></small>
-                </div>
-            </div>
+            
 
             <!-- Navegación de Módulos de Administración -->
             <nav class="sidebar-menu">
@@ -84,7 +93,7 @@ $archivo_modulo = isset($modulos_permitidos[$modulo])
                     </li>
                     <li>
                         <a href="recepcion.php?mod=pacientes" class="<?= ($modulo === 'pacientes') ? 'active' : '' ?>">
-                            <i class='bx bx-group'></i>
+                            <i class='bx bx-user'></i>
                             <span>Pacientes</span>
                         </a>
                     </li>
@@ -96,8 +105,8 @@ $archivo_modulo = isset($modulos_permitidos[$modulo])
                     </li>
                     <li>
                         <a href="recepcion.php?mod=reportes" class="<?= ($modulo === 'reportes') ? 'active' : '' ?>">
-                            <i class='bx bx-bar-chart-alt-2'></i>
-                            <span>Reportes</span>
+                            <i class='bx bx-group'></i>
+                            <span>Personal</span>
                         </a>
                     </li>
                 </ul>
@@ -115,26 +124,7 @@ $archivo_modulo = isset($modulos_permitidos[$modulo])
         <!--CONTENEDOR PRINCIPAL-->
         <main class="main-content">
             
-            <!-- Barra Superior (Top Header) -->
-            <header class="topbar">
-                <div class="topbar-left">
-                    <span class="current-date">
-                        <i class='bx bx-time-five'></i> <?= date('d/m/Y') ?>
-                    </span>
-                </div>
-
-                <div class="topbar-right">
-                    <button class="topbar-icon-btn" title="Notificaciones del Sistema">
-                        <i class='bx bx-bell'></i>
-                        <span class="notification-dot"></span>
-                    </button>
-                    <div class="topbar-divider"></div>
-                    <div class="user-badge">
-                        <span class="role-tag"><?= htmlspecialchars($usuario['rol']) ?>
-                        </span>
-                    </div>
-                </div>
-            </header>
+            
 
             <!-- ÁREA DINÁMICA DE MÓDULOS -->
             <section class="module-viewport">

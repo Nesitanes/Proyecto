@@ -14,7 +14,7 @@ $modulo = isset($_GET['mod']) ? $_GET['mod'] : 'panel';
 // Definición de módulos permitidos para seguridad
 $modulos_permitidos = [
     'panel'     => '../modules/panel/panel_doctor.php',
-    'pacientes' => '../modules/pacientes/pacientes.php',
+    'pacientes' => '../modules/pacientes/doctor_pacientes.php',
     'citas'     => '../modules/citas/citas_doc.php',
     'avisos'     => '../modules/avisos/avisos.php'
 ];
@@ -39,9 +39,26 @@ $archivo_modulo = isset($modulos_permitidos[$modulo])
    
     <link rel="stylesheet" href="../css/panel_doctor.css">
     <link rel="stylesheet" href="../../css/citas.css">
-    <link rel="stylesheet" href="../css/pacientes.css">
+    <link rel="stylesheet" href="../css/reportes_menus.css">
     <link rel="stylesheet" href="../css/avisos.css">
+    
 </head>
+<!-- Nueva Barra Superior Horizontal -->
+<header class="topbar-navbar">
+    <nav class="nav-links">
+        <a href="doctor.php?mod=panel">INICIO</a>
+        <a href="#">SERVICIOS</a>
+        <a href="#">NOSOTROS</a>
+        <a href="#">CONTACTO</a>
+    </nav>
+
+    <div class="user-profile-section">
+        <span class="user-name"><?= htmlspecialchars($usuario['nombre']) ?></span>
+        <div class="user-avatar-circle">
+            <?= htmlspecialchars($usuario['avatar']) ?>
+        </div>
+    </div>
+</header>
 <body>
 
     <div class="dashboard-wrapper">
@@ -55,14 +72,7 @@ $archivo_modulo = isset($modulos_permitidos[$modulo])
                 </div>
             </div>
 
-            <!-- Perfil del Médico en el Menú -->
-            <div class="sidebar-user-profile">
-                <div class="user-avatar"><?= $usuario['avatar'] ?></div>
-                <div class="user-details">
-                    <strong><?= htmlspecialchars($usuario['nombre']) ?></strong>
-                    <small><?= htmlspecialchars($usuario['especialidad']) ?></small>
-                </div>
-            </div>
+            
 
             <!-- Navegación de Módulos -->
             <nav class="sidebar-menu">
@@ -108,25 +118,7 @@ $archivo_modulo = isset($modulos_permitidos[$modulo])
         <!--CONTENEDOR PRINCIPAL-->
         <main class="main-content">
             
-            <!-- Barra Superior (Top Header) -->
-            <header class="topbar">
-                <div class="topbar-left">
-                    <span class="current-date">
-                        <i class='bx bx-time-five'></i> <?= date('d/m/Y') ?>
-                    </span>
-                </div>
-
-                <div class="topbar-right">
-                    <button class="topbar-icon-btn" title="Notificaciones">
-                        <i class='bx bx-bell'></i>
-                        <span class="notification-dot"></span>
-                    </button>
-                    <div class="topbar-divider"></div>
-                    <div class="user-badge">
-                        <span class="role-tag"><?= htmlspecialchars($usuario['rol']) ?></span>
-                    </div>
-                </div>
-            </header>
+           
 
             <!-- ÁREA DINÁMICA: Carga el módulo correspondiente -->
             <section class="module-viewport">
