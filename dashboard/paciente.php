@@ -1,46 +1,41 @@
 <?php
 
-// Datos de sesión simulados para el header y sidebar
+// Datos de sesión simulados
 $usuario = [
-    "nombre" => "Dr. Eduardo Alemán",
-    "especialidad" => "Medicina General",
-    "rol" => "Doctor",
-    "avatar" => "EA"
+    "nombre" => "Andrés Fuentes",
+    "codigo" => "PAC-001",
+    "rol" => "Paciente",
+    "avatar" => "AF"
 ];
 
-// Módulo activo por defecto (vía GET o 'panel' si no se especifica)
-$modulo = isset($_GET['mod']) ? $_GET['mod'] : 'panel';
+// Módulo activo por defecto (vía GET)
+$modulo = isset($_GET['mod']) ? $_GET['mod'] : 'citas';
 
-// Definición de módulos permitidos para seguridad
+// Módulos permitidos para el perfil de Paciente
 $modulos_permitidos = [
-    'panel'     => '../modules/panel/panel_doctor.php',
-    'pacientes' => '../modules/pacientes/pacientes.php',
-    'citas'     => '../modules/citas/citas_doc.php',
-    'avisos'     => '../modules/avisos/avisos.php'
+    'citas'  => '../modules/citas/citas_pacient.php',
+    'avisos' => '../modules/reportes/reportes.php'
 ];
 
-// Determinar qué archivo cargar
+// Determinar qué archivo cargar dinámicamente
 $archivo_modulo = isset($modulos_permitidos[$modulo]) 
     ? $modulos_permitidos[$modulo] 
-    : '../modules/panel/panel_doctor.php';
+    : '../modules/citas/paciente.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel Médico - Medicatec</title>
+    <title>Portal Paciente - Medicatec</title>
     
-    <!-- Boxicons CDN para los íconos globales -->
+    <!-- Boxicons CDN para íconos -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     
-    <!-- Estilo Base del Layout Dashboard -->
+    <!-- Estilos Globals y Módulos -->
     <link rel="stylesheet" href="../css/doctor_dashboard.css">
-   
-    <link rel="stylesheet" href="../css/panel_doctor.css">
-    <link rel="stylesheet" href="../../css/citas.css">
-    <link rel="stylesheet" href="../css/pacientes.css">
-    <link rel="stylesheet" href="../css/avisos.css">
+    <link rel="stylesheet" href="../css/citas_pacient.css">
+    <link rel="stylesheet" href="../css/reportes.css">
 </head>
 <body>
 
@@ -55,48 +50,36 @@ $archivo_modulo = isset($modulos_permitidos[$modulo])
                 </div>
             </div>
 
-            <!-- Perfil del Médico en el Menú -->
+            <!-- Perfil del Paciente -->
             <div class="sidebar-user-profile">
-                <div class="user-avatar"><?= $usuario['avatar'] ?></div>
+                <div class="user-avatar" style="background-color: #059669;"><?= $usuario['avatar'] ?></div>
                 <div class="user-details">
                     <strong><?= htmlspecialchars($usuario['nombre']) ?></strong>
-                    <small><?= htmlspecialchars($usuario['especialidad']) ?></small>
+                    <small><?= htmlspecialchars($usuario['codigo']) ?></small>
                 </div>
             </div>
 
-            <!-- Navegación de Módulos -->
+            <!-- Navegación de Módulos para Pacientes -->
             <nav class="sidebar-menu">
-                <span class="menu-label">Menú Principal</span>
+                <span class="menu-label">Mi Portal</span>
                 
                 <ul>
                     <li>
-                        <a href="doctor.php?mod=panel" class="<?= ($modulo === 'panel') ? 'active' : '' ?>">
-                            <i class='bx bx-grid-alt'></i>
-                            <span>Panel Inicio</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="doctor.php?mod=citas" class="<?= ($modulo === 'citas') ? 'active' : '' ?>">
+                        <a href="paciente.php?mod=citas" class="<?= ($modulo === 'citas') ? 'active' : '' ?>">
                             <i class='bx bx-calendar'></i>
                             <span>Mis Citas</span>
                         </a>
                     </li>
                     <li>
-                        <a href="doctor.php?mod=pacientes" class="<?= ($modulo === 'pacientes') ? 'active' : '' ?>">
-                            <i class='bx bx-group'></i>
-                            <span>Pacientes</span>
-                        </a>
-                    </li>
-                     <li>
-                        <a href="doctor.php?mod=avisos" class="<?= ($modulo === 'avisos') ? 'active' : '' ?>">
-                            <i class='bx bx-bell'></i>
-                            <span>Avisos</span>
+                        <a href="paciente.php?mod=avisos" class="<?= ($modulo === 'avisos') ? 'active' : '' ?>">
+                            <i class='bx bx-folder'></i>
+                            <span>Mis Avisos</span>
                         </a>
                     </li>
                 </ul>
             </nav>
 
-            <!-- Logout Bottom -->
+            <!-- Logout -->
             <div class="sidebar-footer">
                 <a href="../logout.php" class="btn-logout">
                     <i class='bx bx-log-out'></i>
@@ -105,7 +88,7 @@ $archivo_modulo = isset($modulos_permitidos[$modulo])
             </div>
         </aside>
 
-        <!--CONTENEDOR PRINCIPAL-->
+        <!-- CONTENEDOR PRINCIPAL-->
         <main class="main-content">
             
             <!-- Barra Superior (Top Header) -->
@@ -123,12 +106,14 @@ $archivo_modulo = isset($modulos_permitidos[$modulo])
                     </button>
                     <div class="topbar-divider"></div>
                     <div class="user-badge">
-                        <span class="role-tag"><?= htmlspecialchars($usuario['rol']) ?></span>
+                        <span class="role-tag" style="background: #d1fae5; color: #047857;">
+                            <?= htmlspecialchars($usuario['rol']) ?>
+                        </span>
                     </div>
                 </div>
             </header>
 
-            <!-- ÁREA DINÁMICA: Carga el módulo correspondiente -->
+            <!-- ÁREA DINÁMICA DE MÓDULOS -->
             <section class="module-viewport">
                 <?php 
                 if (file_exists($archivo_modulo)) {

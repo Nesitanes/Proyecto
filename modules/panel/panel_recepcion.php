@@ -47,6 +47,7 @@ $max_citas = 50;
 
 <link rel="stylesheet" href="../../css/panel_recepcion.css">
 
+
 <div class="panel-main-container">
 
     <!--ENCABEZADO / BIENVENIDA-->
@@ -63,7 +64,7 @@ $max_citas = 50;
     <div class="metrics-grid">
         <div class="metric-card">
             <div class="metric-icon citas-icon">
-                <i class='b bx-calendar'></i>
+                <i class='bx bx-calendar'></i>
             </div>
             <div class="metric-info">
                 <span class="metric-value"><?= htmlspecialchars($doctor["citas_hoy"]) ?></span>
@@ -73,7 +74,7 @@ $max_citas = 50;
 
         <div class="metric-card">
             <div class="metric-icon paciente-icon">
-                <i class='b bx-user'></i>
+                <i class='bx bx-user'></i>
             </div>
             <div class="metric-info">
                 <span class="metric-value"><?= htmlspecialchars($doctor["mensajes_nuevos"]) ?></span>
@@ -82,7 +83,7 @@ $max_citas = 50;
         </div>
         <div class="metric-card">
             <div class="metric-icon mensajes-icon">
-                <i class='b bx-chat'></i>
+                <i class='bx bx-chat'></i>
             </div>
             <div class="metric-info">
                 <span class="metric-value"><?= htmlspecialchars($doctor["mensajes_nuevos"]) ?></span>

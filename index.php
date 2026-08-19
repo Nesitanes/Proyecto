@@ -30,10 +30,7 @@
         </div>
         <div class="hero-content">
             <h1 class="hero-title-main">CUIDADO INTEGRAL<br>PARA TU SALUD</h1>
-            <div class="hero-buttons">
-                <a href="login.php" class="btn-hero-login">Iniciar Sesión</a>
-                <a href="#" class="btn-hero-cita">Solicitar Cita</a>
-            </div>
+            
         </div>
     </section>
 

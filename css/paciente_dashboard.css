@@ -1,0 +1,50 @@
+
+
+/* Ajustes de color para la marca en vista de paciente */
+.sidebar .user-avatar.paciente-avatar {
+    background-color: #059669 !important;
+}
+
+.role-tag.paciente-tag {
+    background: #d1fae5 !important;
+    color: #047857 !important;
+}
+
+/* Banner de bienvenida dinámico para el paciente (Opcional) */
+.paciente-welcome-banner {
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    color: white;
+    padding: 24px;
+    border-radius: 12px;
+    margin: 25px 30px 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+}
+
+.paciente-welcome-banner h2 {
+    margin: 0 0 6px 0;
+    font-size: 22px;
+}
+
+.paciente-welcome-banner p {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 14px;
+}
+
+.btn-agendar-rapido {
+    background: white;
+    color: #059669;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-agendar-rapido:hover {
+    background: #f0fdf4;
+}
