@@ -1,8 +1,5 @@
 <?php
-// ======================================================
-// DATOS DE PRUEBA (MOCK DATA)
-// Datos dinámicos listos para conectarse a la BD
-// ======================================================
+
 
 $doctor = [
     "nombre" => "Dr. Eduardo Alemán",
@@ -52,9 +49,7 @@ $max_citas = 50;
 
 <div class="panel-main-container">
 
-    <!-- ==========================================
-         ENCABEZADO / BIENVENIDA
-         ========================================== -->
+    <!--ENCABEZADO / BIENVENIDA-->
     <div class="panel-welcome-header">
         <div class="welcome-text">
             <h1>Bienvenido</h1>
@@ -64,12 +59,12 @@ $max_citas = 50;
 
     
 
-    <!-- ==========================================
-         TARJETAS DE MÉTRICAS (METRICS GRID)
-         ========================================== -->
+    <!--TARJETAS DE MÉTRICAS (METRICS GRID)-->
     <div class="metrics-grid">
         <div class="metric-card">
-            <div class="metric-icon citas-icon">📅</div>
+            <div class="metric-icon citas-icon">
+                <i class='b bx-calendar'></i>
+            </div>
             <div class="metric-info">
                 <span class="metric-value"><?= htmlspecialchars($doctor["citas_hoy"]) ?></span>
                 <span class="metric-label">Citas Hoy</span>
@@ -77,14 +72,18 @@ $max_citas = 50;
         </div>
 
         <div class="metric-card">
-            <div class="metric-icon paciente-icon">👥</div>
+            <div class="metric-icon paciente-icon">
+                <i class='b bx-user'></i>
+            </div>
             <div class="metric-info">
                 <span class="metric-value"><?= htmlspecialchars($doctor["mensajes_nuevos"]) ?></span>
                 <span class="metric-label">Pacientes</span>
             </div>
         </div>
         <div class="metric-card">
-            <div class="metric-icon mensajes-icon">💬</div>
+            <div class="metric-icon mensajes-icon">
+                <i class='b bx-chat'></i>
+            </div>
             <div class="metric-info">
                 <span class="metric-value"><?= htmlspecialchars($doctor["mensajes_nuevos"]) ?></span>
                 <span class="metric-label">Mensajes</span>
@@ -92,9 +91,7 @@ $max_citas = 50;
         </div>
     </div>
 
-    <!-- ==========================================
-         SECCIONES DE CITAS (GRID 2 COLUMNAS)
-         ========================================== -->
+    <!-- SECCIONES DE CITAS (GRID 2 COLUMNAS)-->
     <div class="citas-tables-grid">
 
         <!-- CITAS RECIENTES -->
@@ -143,9 +140,7 @@ $max_citas = 50;
 
     </div>
 
-    <!-- ==========================================
-         GRÁFICA SEMANAL DE CITAS (AL FINAL)
-         ========================================== -->
+    <!--GRÁFICA SEMANAL DE CITAS (AL FINAL) -->
     <div class="chart-panel">
         <div class="chart-header">
             <h2>Citas Semanales</h2>

@@ -74,7 +74,7 @@ $mensajes = [
                 onclick="mostrarSeccion('reuniones')">
 
             <div class="card-icon reuniones-icon">
-                📅
+                <i class='bx bx-calendar'> </i>
             </div>
 
             <div class="card-info">
@@ -92,7 +92,7 @@ $mensajes = [
                 onclick="mostrarSeccion('usuarios')">
 
             <div class="card-icon usuarios-icon">
-                👥
+             <i class='bx bx-group'></i>
             </div>
 
             <div class="card-info">
@@ -110,7 +110,7 @@ $mensajes = [
                 onclick="mostrarSeccion('mensajes')">
 
             <div class="card-icon mensajes-icon">
-                💬
+                <i class='bx bx-chat'></i>
             </div>
 
             <div class="card-info">
@@ -215,9 +215,7 @@ $mensajes = [
 
                     <div class="anuncio">
 
-                        <div class="anuncio-icon">
-                            📢
-                        </div>
+                    
 
                         <div class="anuncio-info">
 

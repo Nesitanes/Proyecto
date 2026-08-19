@@ -1,6 +1,4 @@
-/* =====================================================
-   CONTENEDOR Y LAYOUT GENERAL
-   ===================================================== */
+/*CONTENEDOR Y LAYOUT GENERAL*/
 .panel-main-container {
     width: 100%;
     padding: 30px;
@@ -9,9 +7,7 @@
     background-color: #f8fafc;
 }
 
-/* =====================================================
-   HEADER DE BIENVENIDA
-   ===================================================== */
+/*HEADER DE BIENVENIDA*/
 .panel-welcome-header {
     margin-bottom: 20px;
 }
@@ -30,9 +26,7 @@
 
 
 
-/* =====================================================
-   TARJETAS DE MÉTRICAS
-   ===================================================== */
+/* TARJETAS DE MÉTRICAS */
 .metrics-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -88,9 +82,7 @@
     font-weight: 600;
 }
 
-/* =====================================================
-   GRID DE CITAS RECIENTES / HOY
-   ===================================================== */
+/* GRID DE CITAS RECIENTES / HOY */
 .citas-tables-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -192,9 +184,7 @@
     color: #6b7280;
 }
 
-/* =====================================================
-   PANEL Y GRÁFICA SEMANAL (AL FINAL)
-   ===================================================== */
+/*PANEL Y GRÁFICA SEMANAL (AL FINAL) */
 .chart-panel {
     background: white;
     border-radius: 12px;
@@ -283,9 +273,7 @@
     font-weight: 500;
 }
 
-/* =====================================================
-   RESPONSIVE DESIGN
-   ===================================================== */
+/* RESPONSIVE DESIGN*/
 @media (max-width: 900px) {
     .top-actions-grid {
         grid-template-columns: 1fr;

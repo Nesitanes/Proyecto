@@ -1,9 +1,5 @@
 <?php
-// ======================================================
-// DATOS DE PRUEBA (MOCK DATA)
-// Más adelante se consultarían de MySQL con PDO
-// según la sesión activa del Doctor
-// ======================================================
+
 
 $doctor = [
     "nombre" => "Dr. Eduardo Alemán",
@@ -54,9 +50,7 @@ $max_citas = 50; // Límite superior para cálculo de altura en %
 
 <div class="panel-main-container">
 
-    <!-- ==========================================
-         ENCABEZADO / BIENVENIDA
-         ========================================== -->
+    <!--  ENCABEZADO / BIENVENIDA-->
     <div class="panel-welcome-header">
         <div class="welcome-text">
             <h1>Bienvenido</h1>
@@ -67,12 +61,12 @@ $max_citas = 50; // Límite superior para cálculo de altura en %
         </button>
     </div>
 
-    <!-- ==========================================
-         TARJETAS DE MÉTRICAS (METRICS GRID)
-         ========================================== -->
+    <!-- TARJETAS DE MÉTRICAS (METRICS GRID) -->
     <div class="metrics-grid">
         <div class="metric-card">
-            <div class="metric-icon citas-icon">📅</div>
+            <div class="metric-icon citas-icon">
+                <i class='bx bx-calendar'></i>
+            </div>
             <div class="metric-info">
                 <span class="metric-value"><?= htmlspecialchars($doctor["citas_hoy"]) ?></span>
                 <span class="metric-label">Citas Hoy</span>
@@ -80,7 +74,9 @@ $max_citas = 50; // Límite superior para cálculo de altura en %
         </div>
 
         <div class="metric-card">
-            <div class="metric-icon mensajes-icon">💬</div>
+            <div class="metric-icon mensajes-icon">
+                <i class='bx bx-chat'></i>
+            </div>
             <div class="metric-info">
                 <span class="metric-value"><?= htmlspecialchars($doctor["mensajes_nuevos"]) ?></span>
                 <span class="metric-label">Mensajes</span>
@@ -90,9 +86,7 @@ $max_citas = 50; // Límite superior para cálculo de altura en %
 
     
 
-    <!-- ==========================================
-         SECCIONES DE CITAS (GRID 2 COLUMNAS)
-         ========================================== -->
+    <!-- SECCIONES DE CITAS (GRID 2 COLUMNAS) -->
     <div class="citas-tables-grid">
 
         <!-- CITAS RECIENTES -->
@@ -142,9 +136,7 @@ $max_citas = 50; // Límite superior para cálculo de altura en %
     </div>
 
 
-    <!-- ==========================================
-         GRÁFICA SEMANAL DE CITAS
-         ========================================== -->
+    <!-- GRÁFICA SEMANAL DE CITAS-->
     <div class="chart-panel">
         <div class="chart-header">
             <h2>Citas Semanales</h2>
